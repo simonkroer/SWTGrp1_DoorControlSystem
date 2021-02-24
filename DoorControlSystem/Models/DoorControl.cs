@@ -1,4 +1,5 @@
-﻿using DoorControlSystem;
+﻿using System.Threading;
+using DoorControlSystem;
 using DoorControlSystem.Interfaces;
 using DoorControlSystem.Models;
 
@@ -24,10 +25,20 @@ namespace DoorControlSystem.Models
         {
             if (_userValidation.ValidateEntryRequest())
             {
-                _entryNotification.NotifyEntryGranted();
+                _entryNotification.NotifyEntryGranted(id);
                 _door.Open();
+                Thread.Sleep(3000);
+                _door.Close();
 
+                return true;
+            }
+            else
+            {
+                _entryNotification.NotifyEntryDenied(id);
+
+                return false;
             }
         }
+
     }
 }
