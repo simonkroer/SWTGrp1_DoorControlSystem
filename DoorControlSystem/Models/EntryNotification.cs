@@ -1,5 +1,5 @@
 ﻿using System;
-using DoorControlSystem.Interfaces;
+using DoorControlSystem;
 
 namespace DoorControlSystem
 {
