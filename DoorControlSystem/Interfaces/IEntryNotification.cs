@@ -1,4 +1,4 @@
-﻿namespace DoorControlSystem
+﻿namespace DoorControlSystem.Interfaces
 {
     public partial interface IEntryNotification
     {
