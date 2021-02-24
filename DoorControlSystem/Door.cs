@@ -6,6 +6,14 @@ namespace DoorControlSystem
 {
     class Door
     {
+        public void Open()
+        {
+            Console.WriteLine("Door opening");
+        }
 
+        public void Close()
+        {
+            Console.WriteLine("Door closing");
+        }
     }
 }

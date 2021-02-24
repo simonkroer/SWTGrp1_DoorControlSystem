@@ -4,8 +4,7 @@ using System.Text;
 
 namespace DoorControlSystem
 {
-    public interface IAlarm
+    class Door : IDoor
     {
-        public void RaiseAlarm();
     }
 }
