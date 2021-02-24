@@ -9,6 +9,8 @@ namespace DoorControlSystem.Interfaces
         public void Open();
 
         public void Close();
+        void Attach();
 
+        
     }
 }
