@@ -24,13 +24,14 @@ namespace DoorControlSystem.Test.Unit
             _userValidation = new FakeUserValidation();
             _uut = new DoorControl(_door, _alarm, _entryNotification, _userValidation);
         }
+
         //Value based test
         [Test]
         public void RequestEntry_ValidId_ReturnTrue()
         {
-
             Assert.That(_uut.RequestEntry(validId));
         }
+
         //Value based test
         [Test]
         public void RequestEntry_InvalidId_ReturnFalse()
@@ -71,6 +72,13 @@ namespace DoorControlSystem.Test.Unit
         {
             _uut.RequestEntry(invalidId);
             Assert.That(_door.CountOpen, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void DoorBreached_RaiseAlarm_Called()
+        {
+            _uut.Breach();
+            Assert.That(_alarm.CountRaiseAlarm, Is.EqualTo(1));
         }
     }
 }
