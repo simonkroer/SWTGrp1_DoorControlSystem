@@ -1,7 +1,6 @@
-﻿using Microsoft.VisualBasic;
-using System.Threading;
+﻿using DoorControlSystem.Interfaces;
 
-namespace DoorControlSystem.Models
+namespace DoorControlSystem
 {
     public class DoorControl
     {
@@ -19,20 +18,9 @@ namespace DoorControlSystem.Models
             _userValidation = userValidation;
         }
 
-        public bool RequestEntry(string id)
+        RequestEntry(string id)
         {
-            if (_userValidation.ValidateEntryRequest())
-            {
-                _entryNotification.NotifyEntryGranted();
-                _door.OpenDoor();
-                Thread.Sleep(3000);
-                _door.CloseDoor();
-            }
-            else
-            {
-                _entryNotification.NotifyEntryDenied();
-            }
-        }
 
+        }
     }
 }
