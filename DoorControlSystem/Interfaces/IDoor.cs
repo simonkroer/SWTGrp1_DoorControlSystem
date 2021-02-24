@@ -1,10 +1,14 @@
-﻿using Microsoft.VisualBasic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace DoorControlSystem.Interfaces
 {
     public interface IDoor
     {
-        public bool Open();
-        public bool Close();
+        public void Open();
+
+        public void Close();
+
     }
 }
