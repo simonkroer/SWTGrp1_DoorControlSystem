@@ -1,4 +1,5 @@
 ﻿using System;
+using DoorControlSystem.Interfaces;
 
 namespace DoorControlSystem.Models
 {
