@@ -2,7 +2,7 @@
 {
     public partial interface IEntryNotification
     {
-        public void NotifyEntryGranted();
-        public void NotifyEntryDenied();
+        public void NotifyEntryGranted(IUserValidation id);
+        public void NotifyEntryDenied(IUserValidation id);
     }
 }

@@ -6,6 +6,14 @@ namespace DoorControlSystem
 {
     public class EntryNotification: IEntryNotification
     {
+        public void NotifyEntryGranted(IUserValidation id)
+        {
 
+        }
+
+        public void NotifyEntryDenied(IUserValidation id)
+        {
+
+        }
     }
 }
