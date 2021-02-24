@@ -4,9 +4,9 @@ using System.Text;
 
 namespace DoorControlSystem
 {
-    public partial interface IEntryNotification
+    public interface IEntryNotification
     {
-       public void NotifyEntryGranted(var);
+       public void NotifyEntryGranted();
 
     }
 }

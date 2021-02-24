@@ -6,5 +6,6 @@ namespace DoorControlSystem
 {
     public class EntryNotification: IEntryNotification
     {
+
     }
 }
