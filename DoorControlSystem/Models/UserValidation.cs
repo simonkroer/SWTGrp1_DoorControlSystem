@@ -4,7 +4,7 @@ namespace DoorControlSystem.Models
 {
     public class UserValidation : IUserValidation
     {
-        public bool ValidateEntryRequest()
+        public bool ValidateEntryRequest(string id)
         {
             return true;
         }
