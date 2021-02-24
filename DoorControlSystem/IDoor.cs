@@ -4,7 +4,8 @@ using System.Text;
 
 namespace DoorControlSystem
 {
-    interface IDoor
+    public interface IDoor
     {
+
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DoorControlSystem
 {
-    interface IUserValidation
+    public interface IUserValidation
     {
     }
 }
