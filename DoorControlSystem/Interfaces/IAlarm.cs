@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DoorControlSystem
+namespace DoorControlSystem.Interfaces
 {
     public interface IAlarm
     {

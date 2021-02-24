@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DoorControlSystem
+namespace DoorControlSystem.Models
 {
     class Alarm : IAlarm
     {

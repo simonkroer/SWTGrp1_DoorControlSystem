@@ -1,8 +1,10 @@
 ﻿using DoorControlSystem;
+using DoorControlSystem.Interfaces;
+using DoorControlSystem.Models;
 
-namespace DoorControlSystem
+namespace DoorControlSystem.Models
 {
-    public class DoorControl
+    public class DoorControl : IDoorControl
     {
         private IDoor _door;
         private IAlarm _alarm;
@@ -18,9 +20,14 @@ namespace DoorControlSystem
             _userValidation = userValidation;
         }
 
-        RequestEntry(string id)
+        public bool RequestEntry(string id)
         {
+            if (_userValidation.ValidateEntryRequest())
+            {
+                _entryNotification.NotifyEntryGranted();
+                _door.Open();
 
+            }
         }
     }
 }
