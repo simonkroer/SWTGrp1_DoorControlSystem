@@ -79,5 +79,15 @@ namespace DoorControlSystem.Test.Unit
             _uut.Breach();
             Assert.That(_alarm.CountRaiseAlarm, Is.EqualTo(1));
         }
+
+        [Test]
+        public void Open_NoRequestIdCalled_RaiseAlarm_Called()
+        {
+            Door realDoor = new Door();
+            realDoor.Attach(_uut);
+            realDoor.Open();
+
+            Assert.That(_alarm.CountRaiseAlarm, Is.EqualTo(1));
+        }
     }
 }
