@@ -8,12 +8,12 @@ namespace DoorControlSystem.Test.Unit.Fakes
 
         public void Open()
         {
-
+            ++CountOpen;
         }
 
         public void Close()
         {
-
+            ++CountClose;
         }
 
         public void Attach(IDoorControl doorControl)

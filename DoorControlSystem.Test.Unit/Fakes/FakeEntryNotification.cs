@@ -4,8 +4,8 @@ namespace DoorControlSystem.Test.Unit.Fakes
 {
     public class FakeEntryNotification : IEntryNotification
     {
-        private int CountNotifyEntryGranted { get; set; } = 0;
-        private int CountNotifyEntryDenied { get; set; } = 0;
+        public int CountNotifyEntryGranted { get; set; } = 0;
+        public int CountNotifyEntryDenied { get; set; } = 0;
         public void NotifyEntryGranted(string id)
         {
             ++CountNotifyEntryGranted;
@@ -13,7 +13,7 @@ namespace DoorControlSystem.Test.Unit.Fakes
 
         public void NotifyEntryDenied(string id)
         {
-            ++CountNotifyEntryGranted;
+            ++CountNotifyEntryDenied;
         }
     }
 }

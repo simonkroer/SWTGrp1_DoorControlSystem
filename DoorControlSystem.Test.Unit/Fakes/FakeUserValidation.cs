@@ -8,7 +8,7 @@ namespace DoorControlSystem.Test.Unit.Fakes
         public bool EntryValidated { get; set; } = true;
         public bool ValidateEntryRequest(string id)
         {
-            return EntryValidated;
+            return id == "valid";
         }
     }
 }
