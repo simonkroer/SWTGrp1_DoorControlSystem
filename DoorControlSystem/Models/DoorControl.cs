@@ -42,9 +42,9 @@ namespace DoorControlSystem.Models
             return entryState;
         }
 
-        public void Notify(IDoor door)
+        public void Update(IDoor door)
         {
-            if (!_entryState) // if entryState is false there is a breach
+            if (!_entryState && door.Opened) // if entryState is false there is a breach
             {
                 Breach();
             }

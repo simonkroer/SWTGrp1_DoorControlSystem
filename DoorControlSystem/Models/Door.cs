@@ -16,13 +16,16 @@ namespace DoorControlSystem.Models
 
         public void Open()
         {
+
             Console.WriteLine("Door opening");
+            Opened = true;
             Notify();
         }
 
         public void Close()
         {
             Console.WriteLine("Door closing");
+            Opened = false;
         }
 
         public void Attach(IDoorControl doorControl)
@@ -35,9 +38,9 @@ namespace DoorControlSystem.Models
             _doorControl = null;
         }
 
-        void Notify()
+        public void Notify()
         {
-            _doorControl.Breach(this);
+            _doorControl.Update(this);
         }
     }
 }

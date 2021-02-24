@@ -10,8 +10,9 @@ namespace DoorControlSystem.Interfaces
         public void Open();
 
         public void Close();
-        void Attach(IDoorControl doorControl);
+        public void Attach(IDoorControl doorControl);
 
-        void Detach(IDoorControl doorControl);
+        public void Detach(IDoorControl doorControl);
+        public void Notify();
     }
 }

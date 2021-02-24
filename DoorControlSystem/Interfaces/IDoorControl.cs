@@ -4,6 +4,6 @@
     {
         public bool RequestEntry(string id);
         void Breach();
-        void Notify(IDoor door);
+        void Update(IDoor door);
     }
 }
