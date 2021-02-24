@@ -3,7 +3,7 @@
     public interface IDoorControl
     {
         public bool RequestEntry(string id);
-        void Update(IDoor door);
-
+        void Breach();
+        void Notify(IDoor door);
     }
 }

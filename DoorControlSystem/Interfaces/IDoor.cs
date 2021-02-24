@@ -6,11 +6,12 @@ namespace DoorControlSystem.Interfaces
 {
     public interface IDoor
     {
+        public bool Opened { get; set; }
         public void Open();
 
         public void Close();
-        void Attach();
+        void Attach(IDoorControl doorControl);
 
-        
+        void Detach(IDoorControl doorControl);
     }
 }
