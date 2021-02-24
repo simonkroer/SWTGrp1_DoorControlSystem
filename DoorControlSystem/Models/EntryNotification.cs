@@ -8,12 +8,12 @@ namespace DoorControlSystem
     {
         public void NotifyEntryGranted(IUserValidation id)
         {
-
+            Console.WriteLine($"Entry granted for id: {id}");
         }
 
         public void NotifyEntryDenied(IUserValidation id)
         {
-
+            Console.WriteLine($"Entry NOT granted for id: {id}");
         }
     }
 }
