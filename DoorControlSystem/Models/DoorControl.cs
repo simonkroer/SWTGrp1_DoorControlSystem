@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 
-namespace DoorControlSystem
+namespace DoorControlSystem.Models
 {
     public class DoorControl
     {
@@ -18,9 +18,9 @@ namespace DoorControlSystem
             _userValidation = userValidation;
         }
 
-        RequestEntry(string id)
+        public bool RequestEntry(string id)
         {
-
+            _userValidation.
         }
     }
 }

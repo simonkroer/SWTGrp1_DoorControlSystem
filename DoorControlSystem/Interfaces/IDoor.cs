@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 
-namespace DoorControlSystem
+namespace DoorControlSystem.Interfaces
 {
     public interface IDoor
     {
