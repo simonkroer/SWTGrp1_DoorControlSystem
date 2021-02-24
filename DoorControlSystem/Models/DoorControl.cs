@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using System.Threading;
 
 namespace DoorControlSystem.Models
 {
@@ -20,7 +21,18 @@ namespace DoorControlSystem.Models
 
         public bool RequestEntry(string id)
         {
-            _userValidation.
+            if (_userValidation.ValidateEntryRequest())
+            {
+                _entryNotification.NotifyEntryGranted();
+                _door.OpenDoor();
+                Thread.Sleep(3000);
+                _door.CloseDoor();
+            }
+            else
+            {
+                _entryNotification.NotifyEntryDenied();
+            }
         }
+
     }
 }
