@@ -6,5 +6,6 @@ namespace DoorControlSystem
 {
     public interface IAlarm
     {
+        public void RaiseAlarm();
     }
 }

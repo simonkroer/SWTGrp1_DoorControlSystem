@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DoorControlSystem
 {
-    class Alarm
+    class Alarm : IAlarm
     {
         public void RaiseAlarm()
         {
