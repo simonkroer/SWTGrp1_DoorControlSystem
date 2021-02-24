@@ -1,3 +1,4 @@
+using DoorControlSystem.Interfaces;
 using DoorControlSystem.Models;
 using DoorControlSystem.Test.Unit.Fakes;
 using NUnit.Framework;

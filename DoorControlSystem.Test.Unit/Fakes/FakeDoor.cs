@@ -18,7 +18,7 @@ namespace DoorControlSystem.Test.Unit.Fakes
 
         public void Attach(IDoorControl doorControl)
         {
-
+            
         }
 
         public void Detach(IDoorControl doorControl)
