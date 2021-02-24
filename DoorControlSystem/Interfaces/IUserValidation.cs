@@ -2,6 +2,6 @@
 {
     public interface IUserValidation
     {
-        public bool ValidateEntryRequest();
+        public bool ValidateEntryRequest(string id);
     }
 }
