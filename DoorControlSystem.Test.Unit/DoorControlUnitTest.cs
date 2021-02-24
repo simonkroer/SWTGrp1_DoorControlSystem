@@ -75,7 +75,7 @@ namespace DoorControlSystem.Test.Unit
         }
 
         [Test]
-        public void DoorBreached_RaiseAlarm_Called()
+        public void DoorBreached_RaiseAlarmCalled()
         {
             _uut.Breach();
             Assert.That(_alarm.CountRaiseAlarm, Is.EqualTo(1));
