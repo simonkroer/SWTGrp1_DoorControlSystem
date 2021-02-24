@@ -26,6 +26,7 @@ namespace DoorControlSystem.Models
         {
             var entryState = _userValidation.ValidateEntryRequest(id);
             _entryState = entryState;
+
             if (_entryState)
             {
                 _entryNotification.NotifyEntryGranted(id);
