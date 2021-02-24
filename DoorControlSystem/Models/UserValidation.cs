@@ -6,7 +6,7 @@ namespace DoorControlSystem.Models
 {
     public class UserValidation : IUserValidation
     {
-        UserValidation()
+        public UserValidation()
         {
             id_.Add("simon");
             id_.Add("camilla");
@@ -28,7 +28,7 @@ namespace DoorControlSystem.Models
             return false;
         }
 
-        private List<string> id_;
+        private List<string> id_=null;
     }
 
 }
