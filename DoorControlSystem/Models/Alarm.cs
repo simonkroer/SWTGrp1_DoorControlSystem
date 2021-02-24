@@ -1,7 +1,16 @@
-﻿namespace DoorControlSystem
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Security.Cryptography;
+using System.Text;
+
+namespace DoorControlSystem
 {
-    public class Alarm : IAlarm
+    class Alarm : IAlarm
     {
-        
+        public void RaiseAlarm()
+        {
+            Console.WriteLine("Alarm raised");
+        }
     }
 }
