@@ -1,8 +1,11 @@
-﻿namespace DoorControlSystem
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace DoorControlSystem
 {
     public interface IAlarm
     {
-        public bool Start();
-        public bool Stop();
+        public void RaiseAlarm();
     }
 }
