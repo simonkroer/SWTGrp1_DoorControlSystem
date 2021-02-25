@@ -1,5 +1,8 @@
 using DoorControlSystem.Models;
+using DoorControlSystem.Interfaces;
 using DoorControlSystem.Test.Unit.Fakes;
+using NSubstitute;
+using NSubstitute.Exceptions;
 using NUnit.Framework;
 
 namespace DoorControlSystem.Test.Unit.NSub
@@ -7,18 +10,18 @@ namespace DoorControlSystem.Test.Unit.NSub
     public class Tests
     {
         private DoorControl _uut;
-        private FakeAlarm _alarm;
-        private FakeDoor _door;
-        private FakeEntryNotification _entryNotification;
-        private FakeUserValidation _userValidation;
+        private IAlarm _alarm;
+        private IDoor _door;
+        private IEntryNotification _entryNotification;
+        private IUserValidation _userValidation;
 
         [SetUp]
         public void Setup()
         {
-            _alarm = new FakeAlarm();
-            _door = new FakeDoor();
-            _entryNotification = new FakeEntryNotification();
-            _userValidation = new FakeUserValidation();
+            _alarm = Substitute.For<IAlarm>();
+            _door = Substitute.For<IDoor>();
+            _entryNotification = Substitute.For<IEntryNotification>();
+            _userValidation = Substitute.For<IUserValidation>();
             _uut = new DoorControl(_door, _alarm, _entryNotification, _userValidation);
         }
 
@@ -26,7 +29,8 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_ValidId_ReturnTrue()
         {
-            
+            _userValidation.ValidateEntryRequest("valid").Returns(true);
+            Assert.That(_uut.RequestEntry("valid"));
         }
 
         // Jefe
