@@ -38,6 +38,7 @@ namespace DoorControlSystem.Test.Unit.NSub
         public void RequestEntry_InvalidId_ReturnFalse()
         {
             _userValidation.ValidateEntryRequest("invalid").Returns(false);
+            Assert.That(_uut.RequestEntry("invalid"), Is.EqualTo(false));
         }
 
         // Camilla
