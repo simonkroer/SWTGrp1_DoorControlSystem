@@ -96,6 +96,8 @@ namespace DoorControlSystem.Test.Unit.NSub
             
         }
 
-        // more tests???
+
+        // more tests??? - Possible, you can't have to many tests when money isn't an issue. ;-)
+
     }
 }
