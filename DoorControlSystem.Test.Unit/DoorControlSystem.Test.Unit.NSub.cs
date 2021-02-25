@@ -110,7 +110,8 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_InvalidId_Update_RaiseAlarm_notCalled()
         {
-            
+            _uut.RequestEntry("wrong id");
+            _alarm.Received(0).RaiseAlarm();
         }
 
 
