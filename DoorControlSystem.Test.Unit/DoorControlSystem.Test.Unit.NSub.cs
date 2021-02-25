@@ -37,7 +37,8 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_InvalidId_ReturnFalse()
         {
-            
+            _userValidation.ValidateEntryRequest("invalid").Returns(false);
+            Assert.That(_uut.RequestEntry("invalid"), Is.EqualTo(false));
         }
 
         // Camilla
@@ -53,7 +54,8 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_InvalidId_NotifyEntryDenied()
         {
-            
+            _uut.RequestEntry("wrong id");
+            _entryNotification.Received(1).NotifyEntryDenied(Arg.Any<string>());
         }
 
         // Simon
@@ -70,7 +72,9 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_validId_DoorCloses()
         {
-            
+            _userValidation.ValidateEntryRequest("valid").Returns(true);
+            _uut.RequestEntry("valid");
+            _door.Received(1).Close();
         }
 
         // Camilla
@@ -84,7 +88,8 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void DoorBreached_RaiseAlarmCalled()
         {
-            
+            _uut.Breach();
+            _alarm.Received(1).RaiseAlarm();
         }
 
         // free for all
@@ -98,7 +103,6 @@ namespace DoorControlSystem.Test.Unit.NSub
 
         public void Update_entryStateTrueDoorOpenedTrue_RaiseAlarmCalled()
         {
-
             _alarm.Received(1).RaiseAlarm();
         }
 
@@ -106,7 +110,8 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_InvalidId_Update_RaiseAlarm_notCalled()
         {
-            
+            _uut.RequestEntry("wrong id");
+            _alarm.Received(0).RaiseAlarm();
         }
 
 
