@@ -23,9 +23,64 @@ namespace DoorControlSystem.Test.Unit.NSub
         }
 
         [Test]
-        public void Test1()
+        public void RequestEntry_ValidId_ReturnTrue()
         {
-            Assert.Pass();
+            
+        }
+
+        [Test]
+        public void RequestEntry_InvalidId_ReturnFalse()
+        {
+            
+        }
+
+        [Test]
+        public void RequestEntry_ValidId_NotifyEntryGranted()
+        {
+            
+        }
+
+        [Test]
+        public void RequestEntry_InvalidId_NotifyEntryDenied()
+        {
+            
+        }
+
+        [Test]
+        public void RequestEntry_validId_DoorOpens()
+        {
+            
+        }
+
+        [Test]
+        public void RequestEntry_validId_DoorCloses()
+        {
+            
+        }
+
+        [Test]
+        public void RequestEntry_invalidId_DoorDoesNotOpen()
+        {
+            
+        }
+
+        [Test]
+        public void DoorBreached_RaiseAlarmCalled()
+        {
+            
+        }
+
+        [Test]
+        public void Open_NoRequestIdCalled_RaiseAlarm_Called()
+        {
+            
+        }
+
+
+        [Test]
+        public void RequestEntry_InvalidId_Update_RaiseAlarm_notCalled()
+        {
+            
         }
     }
 }
