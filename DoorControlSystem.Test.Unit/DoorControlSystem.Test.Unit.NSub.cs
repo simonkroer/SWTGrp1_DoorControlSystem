@@ -51,7 +51,8 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_InvalidId_NotifyEntryDenied()
         {
-            
+            _uut.RequestEntry("wrong id");
+            _entryNotification.Received(1).NotifyEntryDenied(Arg.Any<string>());
         }
 
         // Simon
@@ -87,7 +88,8 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void DoorBreached_RaiseAlarmCalled()
         {
-            
+            _uut.Breach();
+            _alarm.Received(1).RaiseAlarm();
         }
 
         // free for all
@@ -101,7 +103,6 @@ namespace DoorControlSystem.Test.Unit.NSub
 
         public void Update_entryStateTrueDoorOpenedTrue_RaiseAlarmCalled()
         {
-
             _alarm.Received(1).RaiseAlarm();
         }
 
