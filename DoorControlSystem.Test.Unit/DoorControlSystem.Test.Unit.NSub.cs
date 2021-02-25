@@ -72,9 +72,6 @@ namespace DoorControlSystem.Test.Unit.NSub
             _userValidation.ValidateEntryRequest("valid").Returns(true);
             _uut.RequestEntry("valid");
             _door.Received(1).Close();
-
-            
-            // Assert.That(_door.CountClose, Is.EqualTo(1));
         }
 
         // Camilla
