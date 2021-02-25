@@ -54,7 +54,7 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_InvalidId_NotifyEntryDenied()
         {
-            _uut.RequestEntry("wrong id");
+            _userValidation.ValidateEntryRequest(Arg.Any<string>()).Returns(true);
             _entryNotification.Received(1).NotifyEntryDenied(Arg.Any<string>());
         }
 
@@ -83,7 +83,7 @@ namespace DoorControlSystem.Test.Unit.NSub
         {
             _userValidation.ValidateEntryRequest(Arg.Any<string>()).Returns(false);
             _uut.RequestEntry("not valid");
-            _entryNotification.Received(1).NotifyEntryDenied(Arg.Any<string>());
+            _door.DidNotReceive().Open();
         }
 
         // Thomas
@@ -112,8 +112,8 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_InvalidId_Update_RaiseAlarm_notCalled()
         {
-            _uut.RequestEntry("wrong id");
-            _alarm.Received(0).RaiseAlarm();
+            _userValidation.ValidateEntryRequest(Arg.Any<string>()).Returns(false);
+            _alarm.DidNotReceive().RaiseAlarm();
         }
 
 
