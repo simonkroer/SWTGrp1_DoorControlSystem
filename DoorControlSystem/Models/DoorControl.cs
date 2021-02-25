@@ -54,6 +54,7 @@ namespace DoorControlSystem.Models
         public void Breach()
         {
             _alarm.RaiseAlarm();
+
         }
 
     }

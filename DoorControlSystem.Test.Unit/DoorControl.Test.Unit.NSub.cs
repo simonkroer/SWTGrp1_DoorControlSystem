@@ -90,5 +90,15 @@ namespace DoorControlSystem.Test.Unit
 
             Assert.That(_alarm.CountRaiseAlarm, Is.EqualTo(1));
         }
+
+
+        [Test]
+        public void RequestEntry_InvalidId_Update_RaiseAlarm_notCalled()
+        {
+            _uut.RequestEntry(invalidId);
+            _uut.Update(_door);
+
+            Assert.That(_alarm.CountRaiseAlarm, Is.EqualTo(0));
+        }
     }
 }
