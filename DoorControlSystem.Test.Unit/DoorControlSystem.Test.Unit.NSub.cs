@@ -68,8 +68,9 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_validId_DoorCloses()
         {
-            _uut.RequestEntry("validId").Returns(true);
-            _door.Received(1).Open();
+            _userValidation.ValidateEntryRequest("valid").Returns(true);
+            _uut.RequestEntry("valid");
+            _door.Received(1).Close();
 
             
             // Assert.That(_door.CountClose, Is.EqualTo(1));
