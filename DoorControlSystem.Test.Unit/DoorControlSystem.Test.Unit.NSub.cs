@@ -44,7 +44,9 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_ValidId_NotifyEntryGranted()
         {
-            
+            _userValidation.ValidateEntryRequest(Arg.Any<string>()).Returns(true);
+            _uut.RequestEntry("valid");
+            _entryNotification.Received(1).NotifyEntryGranted(Arg.Any<string>());
         }
         
         // Thomas
