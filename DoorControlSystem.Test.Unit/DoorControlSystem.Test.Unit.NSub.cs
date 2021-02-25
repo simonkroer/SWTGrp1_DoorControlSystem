@@ -37,7 +37,7 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_InvalidId_ReturnFalse()
         {
-            
+            _userValidation.ValidateEntryRequest("invalid").Returns(false);
         }
 
         // Camilla
@@ -65,7 +65,11 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_validId_DoorCloses()
         {
+            _uut.RequestEntry("validId").Returns(true);
+            _door.Received(1).Open();
+
             
+            // Assert.That(_door.CountClose, Is.EqualTo(1));
         }
 
         // Camilla
