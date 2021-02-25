@@ -81,7 +81,9 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_invalidId_DoorDoesNotOpen()
         {
-            
+            _userValidation.ValidateEntryRequest(Arg.Any<string>()).Returns(false);
+            _uut.RequestEntry("not valid");
+            _entryNotification.Received(1).NotifyEntryDenied(Arg.Any<string>());
         }
 
         // Thomas
