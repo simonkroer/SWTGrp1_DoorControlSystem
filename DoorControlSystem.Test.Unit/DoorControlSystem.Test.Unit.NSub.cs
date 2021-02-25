@@ -30,7 +30,7 @@ namespace DoorControlSystem.Test.Unit.NSub
         public void RequestEntry_ValidId_ReturnTrue()
         {
             _userValidation.ValidateEntryRequest("valid").Returns(true);
-            Assert.That(_uut.RequestEntry("valid"));
+            Assert.That(_uut.RequestEntry("valid"), Is.EqualTo(true));
         }
 
         // Jefe
@@ -58,7 +58,10 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_validId_DoorOpens()
         {
-            
+            _userValidation.ValidateEntryRequest("valid").Returns(true);
+            _uut.RequestEntry("valid");
+            _door.Received(1).Open();
+
         }
 
         // Jefe
@@ -88,9 +91,17 @@ namespace DoorControlSystem.Test.Unit.NSub
 
         // free for all
         [Test]
-        public void Open_NoRequestIdCalled_RaiseAlarm_Called()
+        public void Update_entryStateFalseDoorOpenedTrue_RaiseAlarmCalled()
         {
-            
+            _door.Opened = true;
+            _uut.Update(_door);
+            _alarm.Received(1).RaiseAlarm();
+        }
+
+        public void Update_entryStateTrueDoorOpenedTrue_RaiseAlarmCalled()
+        {
+
+            _alarm.Received(1).RaiseAlarm();
         }
 
         // free for all
