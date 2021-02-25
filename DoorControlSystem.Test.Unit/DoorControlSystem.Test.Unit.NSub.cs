@@ -22,65 +22,76 @@ namespace DoorControlSystem.Test.Unit.NSub
             _uut = new DoorControl(_door, _alarm, _entryNotification, _userValidation);
         }
 
+        // Simon
         [Test]
         public void RequestEntry_ValidId_ReturnTrue()
         {
             
         }
 
+        // Jefe
         [Test]
         public void RequestEntry_InvalidId_ReturnFalse()
         {
             
         }
 
+        // Camilla
         [Test]
         public void RequestEntry_ValidId_NotifyEntryGranted()
         {
             
         }
-
+        
+        // Thomas
         [Test]
         public void RequestEntry_InvalidId_NotifyEntryDenied()
         {
             
         }
 
+        // Simon
         [Test]
         public void RequestEntry_validId_DoorOpens()
         {
             
         }
 
+        // Jefe
         [Test]
         public void RequestEntry_validId_DoorCloses()
         {
             
         }
 
+        // Camilla
         [Test]
         public void RequestEntry_invalidId_DoorDoesNotOpen()
         {
             
         }
 
+        // Thomas
         [Test]
         public void DoorBreached_RaiseAlarmCalled()
         {
             
         }
 
+        // free for all
         [Test]
         public void Open_NoRequestIdCalled_RaiseAlarm_Called()
         {
             
         }
 
-
+        // free for all
         [Test]
         public void RequestEntry_InvalidId_Update_RaiseAlarm_notCalled()
         {
             
         }
+
+        // more tests???
     }
 }
