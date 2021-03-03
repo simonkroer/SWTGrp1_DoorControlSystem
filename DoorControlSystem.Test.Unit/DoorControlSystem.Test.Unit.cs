@@ -54,7 +54,8 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_InvalidId_NotifyEntryDenied()
         {
-            _userValidation.ValidateEntryRequest(Arg.Any<string>()).Returns(true);
+            _userValidation.ValidateEntryRequest(Arg.Any<string>()).Returns(false);
+            _uut.RequestEntry("invalid");
             _entryNotification.Received(1).NotifyEntryDenied(Arg.Any<string>());
         }
 
