@@ -94,11 +94,6 @@ namespace DoorControlSystem.Test.Unit.NSub
             _alarm.Received(1).RaiseAlarm();
         }
 
-        public void Update_entryStateTrueDoorOpenedTrue_RaiseAlarmCalled()
-        {
-
-            _alarm.Received(1).RaiseAlarm();
-        }
 
         // free for all
         [Test]
