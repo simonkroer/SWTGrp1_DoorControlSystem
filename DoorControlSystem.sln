@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoorControlSystem", "DoorControlSystem\DoorControlSystem.csproj", "{95E27FAA-E778-4C52-9DF4-4C4C194DF4C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoorControlSystem", "DoorControlSystem\DoorControlSystem.csproj", "{95E27FAA-E778-4C52-9DF4-4C4C194DF4C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoorControlSystem.Test.Unit", "DoorControlSystem.Test.Unit\DoorControlSystem.Test.Unit.csproj", "{4DD71319-3260-47AD-BCC5-735F69C9D32A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoorControlSystem.Test.Unit", "DoorControlSystem.Test.Unit\DoorControlSystem.Test.Unit.csproj", "{4DD71319-3260-47AD-BCC5-735F69C9D32A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
