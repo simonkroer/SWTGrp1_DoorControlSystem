@@ -88,27 +88,11 @@ namespace DoorControlSystem.Test.Unit.NSub
 
         // Thomas
         [Test]
-        public void DoorBreached_RaiseAlarmCalled()
-        {
-            _uut.Breach();
-            _alarm.Received(1).RaiseAlarm();
-        }
-
-        // free for all
-        [Test]
         public void Update_entryStateFalseDoorOpenedTrue_RaiseAlarmCalled()
         {
             _door.Opened = true;
             _uut.Update(_door);
             _alarm.Received(1).RaiseAlarm();
-        }
-
-        [Test]
-        public void Update_entryStateFalseDoorOpenedFalse_RaiseAlarmNotCalled()
-        {
-            _door.Opened = false;
-            _uut.Update(_door);
-            _alarm.DidNotReceive().RaiseAlarm();
         }
 
         // free for all
