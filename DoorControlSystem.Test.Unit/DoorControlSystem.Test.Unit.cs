@@ -37,21 +37,26 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_InvalidId_ReturnFalse()
         {
-            
+            _userValidation.ValidateEntryRequest("invalid").Returns(false);
+            Assert.That(_uut.RequestEntry("invalid"), Is.EqualTo(false));
         }
 
         // Camilla
         [Test]
         public void RequestEntry_ValidId_NotifyEntryGranted()
         {
-            
+            _userValidation.ValidateEntryRequest(Arg.Any<string>()).Returns(true);
+            _uut.RequestEntry("valid");
+            _entryNotification.Received(1).NotifyEntryGranted(Arg.Any<string>());
         }
         
         // Thomas
         [Test]
         public void RequestEntry_InvalidId_NotifyEntryDenied()
         {
-            
+            _userValidation.ValidateEntryRequest(Arg.Any<string>()).Returns(false);
+            _uut.RequestEntry("invalid");
+            _entryNotification.Received(1).NotifyEntryDenied(Arg.Any<string>());
         }
 
         // Simon
@@ -68,21 +73,26 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void RequestEntry_validId_DoorCloses()
         {
-            
+            _userValidation.ValidateEntryRequest("valid").Returns(true);
+            _uut.RequestEntry("valid");
+            _door.Received(1).Close();
         }
 
         // Camilla
         [Test]
         public void RequestEntry_invalidId_DoorDoesNotOpen()
         {
-            
+            _userValidation.ValidateEntryRequest(Arg.Any<string>()).Returns(false);
+            _uut.RequestEntry("not valid");
+            _door.DidNotReceive().Open();
         }
 
         // Thomas
         [Test]
         public void DoorBreached_RaiseAlarmCalled()
         {
-            
+            _uut.Breach();
+            _alarm.Received(1).RaiseAlarm();
         }
 
         // free for all
@@ -94,12 +104,12 @@ namespace DoorControlSystem.Test.Unit.NSub
             _alarm.Received(1).RaiseAlarm();
         }
 
-
         // free for all
         [Test]
         public void RequestEntry_InvalidId_Update_RaiseAlarm_notCalled()
         {
-            
+            _userValidation.ValidateEntryRequest(Arg.Any<string>()).Returns(false);
+            _alarm.DidNotReceive().RaiseAlarm();
         }
 
 
