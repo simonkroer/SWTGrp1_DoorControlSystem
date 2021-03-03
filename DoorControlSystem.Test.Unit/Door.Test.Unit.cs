@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using DoorControlSystem.Interfaces;
 using DoorControlSystem.Models;
+using NSubstitute;
+using NUnit.Framework;
 
 namespace DoorControlSystem.Test.Unit
 {
@@ -25,9 +27,6 @@ namespace DoorControlSystem.Test.Unit
             _userValidation = Substitute.For<IUserValidation>();
             _doorControl = Substitute.For<IDoorControl>();
         }
-
-        [Test]
-        public void 
 
     }
 }

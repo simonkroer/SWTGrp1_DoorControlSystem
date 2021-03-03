@@ -91,8 +91,8 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void DoorBreached_RaiseAlarmCalled()
         {
-            _uut.Breach();
-            _alarm.Received(1).RaiseAlarm();
+            _door.Opened = true;
+            _uut.Received(1).Breach();
         }
 
         // free for all
