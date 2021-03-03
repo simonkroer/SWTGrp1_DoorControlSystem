@@ -66,7 +66,6 @@ namespace DoorControlSystem.Test.Unit.NSub
             _userValidation.ValidateEntryRequest("valid").Returns(true);
             _uut.RequestEntry("valid");
             _door.Received(1).Open();
-
         }
 
         // Jefe
@@ -91,8 +90,8 @@ namespace DoorControlSystem.Test.Unit.NSub
         [Test]
         public void DoorBreached_RaiseAlarmCalled()
         {
-            _door.Opened = true;
-            _uut.Received(1).Breach();
+            _uut.Breach();
+            _alarm.Received(1).RaiseAlarm();
         }
 
         // free for all
@@ -102,6 +101,14 @@ namespace DoorControlSystem.Test.Unit.NSub
             _door.Opened = true;
             _uut.Update(_door);
             _alarm.Received(1).RaiseAlarm();
+        }
+
+        [Test]
+        public void Update_entryStateFalseDoorOpenedFalse_RaiseAlarmNotCalled()
+        {
+            _door.Opened = false;
+            _uut.Update(_door);
+            _alarm.DidNotReceive().RaiseAlarm();
         }
 
         // free for all
