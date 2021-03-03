@@ -11,12 +11,10 @@ namespace DoorControlSystem.Models
 
         public Door()
         {
-            
         }
 
         public void Open()
         {
-
             Console.WriteLine("Door opening");
             Opened = true;
             Notify();
