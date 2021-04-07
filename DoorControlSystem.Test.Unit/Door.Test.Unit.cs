@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DoorControlSystem.Interfaces;
+﻿using DoorControlSystem.Interfaces;
 using DoorControlSystem.Models;
 using NSubstitute;
 using NUnit.Framework;

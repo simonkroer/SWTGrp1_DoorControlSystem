@@ -1,11 +1,9 @@
 using DoorControlSystem.Models;
 using DoorControlSystem.Interfaces;
-using DoorControlSystem.Test.Unit.Fakes;
 using NSubstitute;
-using NSubstitute.Exceptions;
 using NUnit.Framework;
 
-namespace DoorControlSystem.Test.Unit.NSub
+namespace DoorControlSystem.Test.Unit
 {
     public class Tests
     {

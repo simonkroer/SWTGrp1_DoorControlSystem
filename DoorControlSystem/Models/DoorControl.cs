@@ -12,7 +12,7 @@ namespace DoorControlSystem.Models
         private IEntryNotification _entryNotification;
         private IUserValidation _userValidation;
         private bool _entryState; // Sets state according to ValidateEntryRequest
-        public int _noAlarmCalls = 0;
+        public int NoAlarmCalls = 0;
 
         public DoorControl(IDoor door, IAlarm alarm, IEntryNotification entryNotification,
             IUserValidation userValidation)
@@ -48,7 +48,7 @@ namespace DoorControlSystem.Models
         {
             if (!_entryState && door.Opened) // if entryState is false there is a breach
             {
-                ++_noAlarmCalls;
+                ++NoAlarmCalls;
                 Breach();
             }
         }
